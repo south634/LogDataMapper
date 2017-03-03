@@ -1,0 +1,21 @@
+{
+    "require": {
+        "symfony/symfony": "^3.2",
+        "symfony/console": "^3.2",
+        "doctrine/doctrine-bundle": "^1.6",
+        "doctrine/orm": "^2.5",
+        "doctrine/doctrine-migrations-bundle": "^1.0",
+        "geoip2/geoip2": "~2.0",
+        "jenssegers/agent": "^2.5",
+        "aws/aws-sdk-php": "^3.23",
+        "kassner/log-parser": "~1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.8|~5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    }
+}

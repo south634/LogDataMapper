@@ -1,0 +1,24 @@
+services:
+    mygeoip2.database.reader:
+        class: GeoIp2\Database\Reader
+        arguments: ['%geoip_database_path%']
+    
+    jenssegers_agent.agent:
+        class: Jenssegers\Agent\Agent
+        
+    kassner_log_parser.log_parser:
+        class: Kassner\LogParser\LogParser
+        calls:
+            - [setFormat, ['%kassner_log_parser_format%']]    
+        
+    app.log_data_mapper:
+        class: AppBundle\Util\LogDataMapper
+        arguments: ['@jenssegers_agent.agent', '@mygeoip2.database.reader']
+        
+    app.s3_file_manager:
+        class: AppBundle\Util\S3FileManager
+        arguments: ['@aws_s3.s3client']
+        
+    aws_s3.s3client:
+        class: Aws\S3\S3Client
+        arguments: ['%aws_config%']

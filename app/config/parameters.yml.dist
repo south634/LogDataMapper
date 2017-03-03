@@ -1,0 +1,18 @@
+parameters:
+    secret: ~
+    database_host: ~
+    database_port: ~
+    database_name: ~
+    database_user: ~
+    database_password: ~
+    geoip_database_path: ~
+    aws_config:
+        version: ~
+        region: ~
+        credentials:
+            key: ~
+            secret: ~
+    s3object:
+        Bucket: ~
+        Key: ~
+    kassner_log_parser_format: ~
